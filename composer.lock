@@ -4,8 +4,58 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "376f06488957613fba7ba0b1ba7031fd",
+    "content-hash": "179ca969a842194f25237596f85f4393",
     "packages": [
+        {
+            "name": "ar-php/ar-php",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tawfekov/ar-php.git",
+                "reference": "4438469e70970ad059ae7536e1c928e879e40e04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tawfekov/ar-php/zipball/4438469e70970ad059ae7536e1c928e879e40e04",
+                "reference": "4438469e70970ad059ae7536e1c928e879e40e04",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Arphp": "src/"
+                },
+                "classmap": [
+                    "autoload_classmap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Khaled Al-Sham'aa",
+                    "email": "khaled@ar-php.org",
+                    "homepage": "http://www.ar-php.org/"
+                },
+                {
+                    "name": "Tawfek Daghistani",
+                    "email": "tawfekov@gmail.com"
+                }
+            ],
+            "description": "helper library for dealing with arabic language",
+            "homepage": "http://www.ar-php.org/",
+            "support": {
+                "issues": "https://github.com/tawfekov/ar-php/issues",
+                "source": "https://github.com/tawfekov/ar-php/tree/master"
+            },
+            "abandoned": "khaled.alshamaa/ar-php",
+            "time": "2018-06-22T19:02:45+00:00"
+        },
         {
             "name": "doctrine/annotations",
             "version": "1.13.3",

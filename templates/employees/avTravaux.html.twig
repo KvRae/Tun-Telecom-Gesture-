@@ -1,13 +1,18 @@
-{% extends 'base.html.twig' %}
-    {% block title %}Edit Employees{% endblock %}
+<html lang="ar">
+<head>
+    <title>pdf</title>
+<style type="text/css">
+    body { font-family: DejaVu Sans, sans-serif; }
+</style>
+</head>
 
 {% block body %}
-<div class="container">
+<div class="container" style="font-family: Arial,sans-serif">
     <div class="row">
-        <div class="col-md-6 text-center align-self-center ms-auto">
-            <p><br><strong><em><span style="color: rgb(0, 0, 0); background-color: transparent;">جوان 2022</span></em></strong><br><br><br></p>
+        <div >
+            <p><br><strong><em><span style="font-family: 'Arial Black',emoji ;color: rgb(0, 0, 0); background-color: transparent;">جوان 2022</span></em></strong><br><br><br></p>
         </div>
-        <div class="col-md-6 text-end"><img src="{{ asset("assets/img/R.png") }}" style="width: 300px;"></div>
+        <div class="col-md-6 text-end"><img src="{{ asset("assets/img/R.png") }}" style="width: 100px;"></div>
     </div>
 </div>
 <div class="container">
@@ -39,7 +44,7 @@
                         <td>0</td>
                         <td>0</td>
                         <td>0</td>
-                        <td style="background: var(--bs-gray-500);"><strong><span style="color: rgb(0, 0, 0); background-color: transparent;">:رقم التســــــجيل</span></strong><br></td>
+                        <td style="background-color: grey;"><strong><span style="color: rgb(0, 0, 0); background-color: transparent;">:رقم التســــــجيل</span></strong><br></td>
                     </tr>
                     </tbody>
                 </table>
@@ -65,5 +70,7 @@
         </div>
         <div class="col-md-6"></div>
     </div>
-</div>
+</div><title></title>
+
 {% endblock %}
+</html>

@@ -14,8 +14,10 @@ class PdfService
 
         $pdfOptions = new Options();
         $this->domPdf->setPaper('A4', 'portrait');
-        $pdfOptions->set('defaultFont','Arial');
+        //$pdfOptions->set("DOMPDF_DEFAULT_FONT", "dejavu sans");
+        $pdfOptions->set('isRemoteEnabled', true);
         $pdfOptions->setIsHtml5ParserEnabled(true);
+
         $this->domPdf->setOptions($pdfOptions);
 
     }
