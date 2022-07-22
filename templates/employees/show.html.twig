@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Employees{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <a href="{{ path('app_employees_index') }}">
+        <button class="btn btn-primary" type="button" style="background: var(--bs-cyan);"><i class="fas fa-arrow-circle-left"></i> العودة للقائمة </button>
+        </a>
+        <h3 class="text-end text-dark mb-4"><strong><span style="color: rgb(0, 0, 0); background-color: transparent;">ترخيص مسبق للقيام بعمل إضافي أيام الآحاد والعطل الرسمية</span></strong><br></h3>
+        <div class="row mb-3">
+            <div class="col-lg-4">
+                <div class="card mb-3">
+                    <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="{{ asset('assets/img/dogs/default-avatar.png') }}" width="160" height="160">
+                        <div class="mb-3">
+                            <h2 class="text-center"><span style="color: rgb(0, 0, 0); background-color: transparent;">العون المكلف بالعمل الإضافي</span><br></h2>
+                        </div>
+                        <a href="{{ path('fichier_pdf', {'id': employee.id}) }}">
+                        <button class="btn btn-primary btn-sm" type="submit">
+                            <i class="fas fa-download" style="margin-right: 3px;"></i>تحرير الوثيقة</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row mb-3 d-none">
+                    <div class="col">
+                        <div class="card text-white bg-primary shadow">
+                            <div class="card-body">
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <p class="m-0">e</p>
+                                        <p class="m-0"><strong>65.2%</strong></p>
+                                    </div>
+                                    <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
+                                </div>
+                                <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5% since last month</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-white bg-success shadow">
+                            <div class="card-body">
+                                <div class="row mb-2">
+
+                                    <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow mb-3">
+                            <div class="card-header text-end py-3">
+                                <p class="text-primary m-0 fw-bold">بيانات الموظف</p>
+                            </div>
+                            <div class="card-body text-end">
+                                <form>
+                                    <div class="row">
+                                        <div class="col text-end">
+                                            <div class="mb-3"><label class="form-label" for="username"><strong><span style="color: rgb(0, 0, 0);">:</span><span style="color: rgb(0, 0, 0);">الاسم و اللقب&nbsp;</span></strong><br></label></div>
+                                            <p>{{ employee.prenom ~ ' ' ~ employee.nom }}</p>
+                                        </div>
+                                        <div class="col text-end">
+                                            <div class="mb-3"><label class="form-label" for="email"><strong><span style="color: rgb(0, 0, 0); background-color: transparent;">:رقم التســــــجيل</span></strong><br></label></div>
+                                            <p>{{ employee.matricule }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col text-end">
+                                            <div class="mb-3"><label class="form-label text-end" for="first_name"><strong><span style="color: rgb(0, 0, 0); background-color: transparent;">:العنوان</span></strong><br></label></div>
+                                            <p>{{ employee.adresseTravaux }}</p>
+                                        </div>
+                                        <div class="col text-end">
+                                            <div class="mb-3"><label class="form-label" for="last_name"><strong><span style="color: rgb(0, 0, 0); background-color: transparent;">:الخطة</span></strong><br></label></div>
+                                            <p>{{ employee.plan }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col text-end">
+                                            <div class="mb-3"><label class="form-label" for="last_name"><strong><span style="color: rgb(0, 0, 0); background-color: transparent;">:</span><span style="color: rgb(0, 0, 0);">الأيام المعنية</span></strong><br></label></div>
+                                            <p>{{ employee.dateTravaux }}</p>
+                                        </div>
+                                        <a href="{{ path('app_employees_edit', {'id': employee.id}) }}">
+                                        <button class="btn btn-primary" type="button" style="background: var(--bs-green);"> <i class="far fa-edit"></i>تعديل البيانات </button></a>
+                                    </div>
+                                    <div class="mb-3"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

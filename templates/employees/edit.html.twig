@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Employees{% endblock %}
+
+{% block body %}
+<div class="col-md-6 offset-md-5" style="align-content: center;">
+    <h1>تعديل بيانات العون</h1>
+    <a href="{{ path('app_employees_index') }}">
+        <button class="btn btn-primary" type="button" style="background: var(--bs-cyan);"><i class="fas fa-arrow-circle-left"></i> العودة للقائمة </button>
+    </a>
+
+        {{ include('employees/_form.html.twig', {'button_label': 'تعديل'}) }}
+        {{ include('employees/_delete_form.html.twig') }}
+
+
+
+
+</div>
+{% endblock %}

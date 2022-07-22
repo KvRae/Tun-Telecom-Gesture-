@@ -1,0 +1,63 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="utf-13">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Tunisie Telecom - AdminPanel</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+                <link rel="stylesheet" href="{{ asset("assets/bootstrap/css/bootstrap.min.css") }}">
+                <link rel="stylesheet" href="{{ asset("https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap") }}">
+                <link rel="stylesheet" href="{{ asset("assets/fonts/fontawesome-all.min.css") }}">
+
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src={{ asset("assets/bootstrap/js/bootstrap.min.js") }}></script>
+            <script src={{ asset("assets/js/chart.min.js") }}></script>
+            <script src={{ asset("assets/js/bs-init.js") }}></script>
+            <script src={{ asset("assets/js/theme.js") }}></script>
+        {% endblock %}
+    </head>
+
+    <body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark text-start align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="">
+                    <img class="img-fluid" src="{{ asset("assets/img/Logo%20tt.png")}}" style="width: 150px;margin-top: 20px;">
+                    <div class="sidebar-brand-icon rotate-n-15"></div>
+                </a>
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link active" href="" style="margin: 68px 0px -3px;margin-top: 30px;"><i class="fas fa-tachometer-alt"></i><span>لوحه القياده</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/employees"><i class="fas fa-table"></i><span>قائمة الأعوان</span></a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                </ul>
+
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <p class="text-center"><br><br><br></p>
+                    </div>
+                </nav>
+                {% block body %}
+
+                {% endblock %}
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © Karam Mannai</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    </body>
+</html>

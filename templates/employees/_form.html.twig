@@ -1,0 +1,26 @@
+<div class="col-md-2">
+{{ form_start(form) }}
+    <p></p>
+    {{ form_row(form.matricule) }}
+    <p></p>
+    {{ form_row(form.nom) }}
+    <p></p>
+    {{ form_row(form.prenom) }}
+    <p></p>
+    {{ form_row(form.plan) }}
+    <p></p>
+    {{ form_row(form.date_break) }}
+    <p></p>
+    {{ form_row(form.date_Eid) }}
+    <p></p>
+    {{ form_row(form.travauxFaits) }}
+    <br>
+    <h2>الاعمال الإضافية</h2>
+    <p></p>
+    {{ form_row(form.dateTravaux) }}
+    <p></p>
+    {{ form_row(form.adresseTravaux) }}
+
+    <button class="btn-primary" style="background: var(--bs-green); margin-top: 10px;">{{ button_label|default('حفظ البيانات') }}</button>
+{{ form_end(form) }}
+</div>

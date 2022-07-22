@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Employees index{% endblock %}
+
+{% block body %}
+
+
+
+
+    <div class="container-fluid">
+        <div class="card shadow">
+            <div class="card-header py-3">
+                <p class="text-center text-primary m-0 fw-bold" style="font-size: 25px;">
+                    <strong><span style="color: rgb(0, 0, 0); background-color: transparent;">ايام الراحة الاسبوعية والاعياد الرسمية</span>
+                    </strong><br></p>
+            </div>
+            <div class="card-body text-end">
+                <div class="row">
+                    <div class="col-md-6 text-nowrap">
+                        <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-md-end dataTables_filter" id="dataTable_filter">
+                            <label class="form-label">
+                                <strong>
+                                    <span style="color: rgb(0, 0, 0);">&nbsp;
+                                        {{  "now"|date("m/Y") }}
+                                    </span>
+                                </strong>
+                            </label>
+                        </div>
+                    </div>
+
+                        <a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button"  href="{{ path('app_employees_new') }}" style="background: var(--bs-green);width: 100px;">
+                            <i class="fas fa-user-plus fa-sm text-white-50"></i>إضافة عون</a>
+                </div>
+                <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                    <table class="table my-0" id="dataTable">
+                        <thead>
+                        <tr>
+
+                            <th><span style="color: rgb(28, 28, 28);">تصرف</span></th>
+                            <th><br><strong><span style="color: rgb(0, 0, 0); background-color: transparent;">الاعمال المنجزة</span></strong><br></th>
+                            <th><br><strong><span style="color: rgb(0, 0, 0); background-color: transparent;">تاريخ العيد الرسمي</span></strong><br></th>
+                            <th><br><strong><span style="color: rgb(0, 0, 0); background-color: transparent;">تاريخ الراحة الاسبوعية</span></strong><br></th>
+                            <th><br><strong><span style="color: rgb(0, 0, 0); background-color: transparent;">الخطة</span></strong><br></th>
+                            <th><br><strong><span style="color: rgb(0, 0, 0); background-color: transparent;">الاسم واللقب</span></strong><br></th>
+                            <th><br><strong><span style="color: rgb(0, 0, 0); background-color: transparent;">الرقم الترتيبي</span></strong><br></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for employee in employees %}
+                            <tr>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a href="{{ path('app_employees_show', {'id': employee.id}) }}">
+                                            <button class="btn btn-primary" type="button" style="background: var(--bs-blue); margin-right: 4px
+"><i class="far fa-user"></i></button></a>
+                                        <a href="{{ path('app_employees_edit', {'id': employee.id}) }}">
+                                        <button class="btn btn-primary" type="button" style="background: var(--bs-red);"><i class="far fa-edit"></i></button></a>
+                                    </div>
+
+                                </td>
+                                <td>{{ employee.travauxFaits }}</td>
+
+                                <td>{{ employee.dateBreak }}</td>
+
+                                <td>{{ employee.dateEid }}</td>
+                                <td> {{ employee.plan }}</td>
+                                <td>{{ employee.prenom ~ ' ' ~ employee.nom }}</td>
+
+                                <td>{{ employee.matricule }}</td>
+
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="7">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                        <tfoot>
+                        <tr></tr>
+                        </tfoot>
+                    </table>
+                </div><a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i> إنشاء وثيقة</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
