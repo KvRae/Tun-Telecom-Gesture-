@@ -87,12 +87,15 @@ class EmployeesController extends AbstractController
      * @param Employees $employee
      */
     public function generatePdf( PdfService $pdf, Employees $employee){
-        $matricule =(string) $employee->getMatricule();
-        $mat=[];
-        for ($i=0; $i<strlen($matricule); $i++)
-            $mat[$i]= substr($matricule,$i,1);
-        $html = $this->render('employees/avTravaux.html.twig',['employee'=> $employee,'matricule'=>$mat]);
+        $path  = 'assets/img/logo_tt.jpg';
+        $type = pathinfo($path, PATHINFO_EXTENSION);
+        $data = file_get_contents($path);
+        $pic = '$data:image/'. $type. ';base64,'. base64_encode($data);
+
+
+        $html = $this->render('employees/avTravaux.html.twig',['employee'=> $employee,'logo'=>$pic]);
         $pdf->showPdfFile($html);
+        $pdf->generateBinaryPDF();
     }
 
     /**

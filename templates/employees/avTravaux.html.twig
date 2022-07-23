@@ -1,6 +1,6 @@
 <html lang="ar">
 <head>
-    <title>pdf</title>
+    <title>ترخيص مسبق للقيام بعمل إضافي أيام الآحاد والعطل الرسمية</title>
 <style type="text/css">
     body { font-family: DejaVu Sans, sans-serif; }
 </style>
@@ -9,7 +9,7 @@
 {% block body %}
 <div class="container" style="text-align: right;">
     <div class="row">
-        <div class="col-md-6 text-end"><img src="{{ asset("![](../../public/assets/img/Logout.png)") }}" style="width: 100px;" alt=""></div>
+        <div class="col-md-6 text-end"><img src="{{ logo  }}" style="width: 100px;" alt=""></div>
         <div style="text-align: left" >
             <p><br><strong>
                         <span style="color: rgb(0, 0, 0); background-color: transparent;">
@@ -60,7 +60,8 @@
                             {% if("now"|date("m") == 12 ) %}
                                 {{ 'ديسمبر' }}
                             {% endif %}
-                            {{"now"|date("Y")}}
+                            {{ '20' ~' '~ "now"|date("y")}}
+
                         </span></strong></p>
         </div>
     </div>
@@ -70,7 +71,7 @@
             <div class="col-md-6 text-end">
                 <p>الشركة الوطنية للاتصالات</p>
                 <p>الإدارة الجهوية للاتصالات بجندوبة</p>
-                <p>الهيكل: وحدة التصرف في الخدمات</p>
+                <p style="margin-right: 20px">الهيكل: وحدة التصرف في الخدمات</p>
                 <br>
             </div>
 
