@@ -23,8 +23,55 @@
                         <div class="text-md-end dataTables_filter" id="dataTable_filter">
                             <label class="form-label">
                                 <strong>
+
                                     <span style="color: rgb(0, 0, 0);">&nbsp;
-                                        {{  "now"|date("m/Y") }}
+                                        {% if("now"|date("m") == 1 ) %}
+                                            {{ 'جانفي' ~' '~ "now"|date("Y") }}
+                                        {% endif %}
+
+                                        {% if("now"|date("m") == 2 ) %}
+                                            {{ 'فيفري' ~' '~ "now"|date("Y") }}
+                                        {% endif %}
+
+                                        {% if("now"|date("m") == 3 ) %}
+                                            {{ 'مارس' ~' '~ "now"|date("Y") }}
+                                        {% endif %}
+
+                                        {% if("now"|date("m") == 4 ) %}
+                                            {{ 'أفريل' ~' '~ "now"|date("Y") }}
+                                        {% endif %}
+
+                                        {% if("now"|date("m") == 5 ) %}
+                                            {{ 'ماي' ~' '~ "now"|date("Y") }}
+                                        {% endif %}
+
+                                        {% if("now"|date("m") == 6 ) %}
+                                            {{ 'جوان' ~' '~ "now"|date("Y") }}
+                                        {% endif %}
+
+                                        {% if("now"|date("m") == 7 ) %}
+                                            {{ 'جويلية' ~' '~ "now"|date("Y") }}
+                                        {% endif %}
+
+                                        {% if("now"|date("m") == 8 ) %}
+                                            {{ 'أوت' ~' '~ "now"|date("Y") }}
+                                        {% endif %}
+
+                                        {% if("now"|date("m") == 9 ) %}
+                                            {{ 'سبتمبر' ~' '~ "now"|date("Y") }}
+                                        {% endif %}
+
+                                        {% if("now"|date("m") == 10 ) %}
+                                            {{ 'أكتوبر' ~' '~ "now"|date("Y") }}
+                                        {% endif %}
+
+                                        {% if("now"|date("m") == 11 ) %}
+                                            {{ 'نوفمبر' ~' '~ "now"|date("Y") }}
+                                        {% endif %}
+
+                                        {% if("now"|date("m") == 12 ) %}
+                                            {{ 'ديسمبر' ~' '~ "now"|date("Y") }}
+                                        {% endif %}
                                     </span>
                                 </strong>
                             </label>
