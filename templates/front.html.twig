@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Welcome</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset("assets/bootstrap/css/bootstrap.min.css") }}">
+        <link rel="stylesheet" href="{{ asset("https://fonts.googleapis.com/css?family=Arbutus+Slab") }}">
+        <link rel="stylesheet" href="{{ asset("https://fonts.googleapis.com/css?family=Cookie") }}">
+        <link rel="stylesheet" href="{{ asset("https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700") }}">
+        <link rel="stylesheet" href="{{ asset("assets/css/Animated-Text-Background.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/css/Button-Change-Text-on-Hover.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/css/Footer-Dark-icons.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/css/Pretty-Header-.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/css/styles.css") }}">
+
+    {% endblock %}
+</head>
+{% block javascripts %}
+    <script src={{ asset("assets/bootstrap/js/bootstrap.min.js") }}></script>
+    <script src={{ asset("assets/js/jquery.min.js") }}></script>
+    <script src={{ asset("assets/js/Animated-Text-Background.js") }}></script>
+
+{% endblock %}
+
+<body>
+<nav class="navbar navbar-light navbar-expand-md custom-header" style="background: var(--light);">
+    <div class="container-fluid"><a href="/"><img  src="{{ asset("assets/img/Logo_tt.png") }}" width="150"></a>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="navbar-nav links">
+                <li class="nav-item"><a class="nav-link" href="#">Overview </a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Surveys </a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> Reports</a></li>
+                <li class="nav-item"><a class="nav-link custom-navbar" href="#"> Roles<span class="badge badge-pill badge-primary">new</span></a></li>
+            </ul>
+            <ul class="navbar-nav ml-auto"></ul>
+        </div>
+        <a href="{{path("app_login") }}">
+        <button class="button" type="button" data-hover="Register" ><span>Login</span></button></a>
+    </div>
+</nav>
+{% block body %}
+
+{% endblock %}
+<footer>
+    <div class="container text-center py-4 py-lg-5">
+        <p class="text-muted mb-0">Copyright © Karam Mannai</p>
+    </div>
+</footer>
+
+
+</body>
+
+</html>
