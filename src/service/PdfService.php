@@ -10,22 +10,23 @@ class PdfService
     private $domPdf;
 
     public function __construct(){
-        $this->domPdf = new Dompdf();
 
         $pdfOptions = new Options();
+        $this->domPdf = new Dompdf();
         $this->domPdf->setPaper('A4', 'portrait');
-        //$pdfOptions->set("DOMPDF_DEFAULT_FONT", "dejavu sans");
         $pdfOptions->isRemoteEnabled(true);
-        $pdfOptions->setIsHtml5ParserEnabled(true);
-
+        //$pdfOptions->setIsHtml5ParserEnabled(true);
         $this->domPdf->setOptions($pdfOptions);
+
+
 
     }
 
     public function showPdfFile($html){
         $this->domPdf->loadHtml($html);
         $this->domPdf->render();
-        $this->domPdf->stream('fichier.pdf',[
+        ob_get_clean();
+        $this->domPdf->stream('file.pdf',[
             'Attachment' =>false
         ]);
 

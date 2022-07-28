@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Welcome</title>
+    <title>Tunisie Telecom</title>
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset("assets/bootstrap/css/bootstrap.min.css") }}">
         <link rel="stylesheet" href="{{ asset("https://fonts.googleapis.com/css?family=Arbutus+Slab") }}">
@@ -26,20 +26,35 @@
 {% endblock %}
 
 <body>
-<nav class="navbar navbar-light navbar-expand-md custom-header" style="background: var(--light);">
+<nav class="navbar navbar-light navbar-expand-md custom-header" style="background: white;">
     <div class="container-fluid"><a href="/"><img  src="{{ asset("assets/img/Logo_tt.png") }}" width="150"></a>
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="navbar-nav links">
-                <li class="nav-item"><a class="nav-link" href="#">Overview </a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Surveys </a></li>
-                <li class="nav-item"><a class="nav-link" href="#"> Reports</a></li>
-                <li class="nav-item"><a class="nav-link custom-navbar" href="#"> Roles<span class="badge badge-pill badge-primary">new</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Empty </a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Empty </a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> Empty</a></li>
+                <li class="nav-item"><a class="nav-link custom-navbar" href="#"> Empty<span class="badge badge-pill badge-primary">new</span></a></li>
             </ul>
             <ul class="navbar-nav ml-auto"></ul>
         </div>
-        <a href="{{path("app_login") }}">
-        <button class="button" type="button" data-hover="Register" ><span>Login</span></button></a>
+
+
+
     </div>
+    {% if app.user %}
+        <div class="dropdown show ml-auto"><a class="dropdown-toggle" aria-expanded="true" data-toggle="dropdown" href="#" style="background: white;"><img class="dropdown-image" src="{{ asset("assets/img/dogs/default-avatar.png") }}" /></a>
+            <div class="dropdown-menu dropdown-menu-right show">
+                <div class="dropdown-item">
+                    You are logged in as<br> <span>{{ app.user.userIdentifier }}</span>
+                </div>
+                <div class="dropdown-divider">
+                </div>
+                <a class="dropdown-item" href="/logout">Logout </a></div>
+        </div>
+    {% else %}
+        <a href="{{path("app_login") }}">
+            <button class="button" type="button" data-hover="Register" ><span>Login</span></button></a>
+    {% endif %}
 </nav>
 {% block body %}
 
