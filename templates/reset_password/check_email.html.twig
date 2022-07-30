@@ -1,0 +1,10 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}إعادة تعيين كلمة المرور البريد الإلكتروني المرسل{% endblock %}
+
+{% block body %}
+    <p style="text-align: right; margin-right: 20px">
+        في حالة وجود حساب يطابق بريدك الإلكتروني، تم إرسال بريد إلكتروني للتو يحتوي على رابط يمكنك استخدامه لإعادة تعيين كلمة المرور
+    </p>
+    <p style="text-align: right; margin-bottom: 300px ; margin-right: 20px">إذا لم تتلق رسالة بريد إلكتروني، يرجى التحقق من مجلد الرسائل غير المرغوب فيها أو <a href="{{ path('app_forgot_password_request') }}"> حاول مرة أخرى</a> </p>
+{% endblock %}

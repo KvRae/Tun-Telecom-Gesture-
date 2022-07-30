@@ -30,10 +30,10 @@
     <div class="container-fluid"><a href="/"><img  src="{{ asset("assets/img/Logo_tt.png") }}" width="150"></a>
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="navbar-nav links">
-                <li class="nav-item"><a class="nav-link" href="#">Empty </a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Empty </a></li>
-                <li class="nav-item"><a class="nav-link" href="#"> Empty</a></li>
-                <li class="nav-item"><a class="nav-link custom-navbar" href="#"> Empty<span class="badge badge-pill badge-primary">new</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> </a></li>
+                <li class="nav-item"><a class="nav-link" href="#"></a></li>
+                <li class="nav-item"><a class="nav-link custom-navbar" href="#"> </a></li>
             </ul>
             <ul class="navbar-nav ml-auto"></ul>
         </div>
@@ -42,18 +42,18 @@
 
     </div>
     {% if app.user %}
-        <div class="dropdown show ml-auto"><a class="dropdown-toggle" aria-expanded="true" data-toggle="dropdown" href="#" style="background: white;"><img class="dropdown-image" src="{{ asset("assets/img/dogs/default-avatar.png") }}" /></a>
+        <div class="dropdown show ml-auto"><a class="dropdown-toggle" aria-expanded="true" data-toggle="dropdown" href="#" style="background: white;"><img class="dropdown-image" src="{{ asset("assets/img/dogs/default-avatar.png") }}"  alt=""/></a>
             <div class="dropdown-menu dropdown-menu-right show">
                 <div class="dropdown-item">
-                    You are logged in as<br> <span>{{ app.user.userIdentifier }}</span>
+                    لقد قمت بتسجيل الدخول باسم<br> <span>{{ app.user.userIdentifier }}</span>
                 </div>
                 <div class="dropdown-divider">
                 </div>
-                <a class="dropdown-item" href="/logout">Logout </a></div>
+                <a class="dropdown-item" href="/logout">الخروج </a></div>
         </div>
     {% else %}
         <a href="{{path("app_login") }}">
-            <button class="button" type="button" data-hover="Register" ><span>Login</span></button></a>
+            <button class="button" type="button" data-hover="الدخول" ><span>تسجيل</span></button></a>
     {% endif %}
 </nav>
 {% block body %}
