@@ -12,7 +12,8 @@
         {% for user in users %}
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 user-item" style="margin-left: 10px;">
             <div class="user-container"><a class="user-avatar" href="#"><img class="rounded-circle img-fluid" src={{ asset("assets/img/avatars/default-avatar.png") }} width="48" height="48" alt="Profile of Mark Smith Peterson"></a>
-                <p class="user-name"><a href="{{ path('app_user_show', {'id': user.id}) }}">{{ user.email }}</a><span>créé le {{ user.createdAt |date("d/M/Y h:i") }} </span></p>
+                <p class="user-name"><a href="{{ path('app_user_show', {'id': user.id}) }}">{{ user.email }}</a><span>créé le {{ user.createdAt |date("d M Y h:i") }} </span></p>
+                <p class="user-name"><a href="{{ path('app_user_show', {'id': user.id}) }}">{{ user.email }}</a><span>dernier login {{ user.createdAt |date("d M Y h:i") }} </span></p>
 
             </div>
         </div>
