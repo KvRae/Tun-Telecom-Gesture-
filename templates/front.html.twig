@@ -47,6 +47,12 @@
                 <div class="dropdown-item">
                     لقد قمت بتسجيل الدخول باسم<br> <span>{{ app.user.userIdentifier }}</span>
                 </div>
+                {% if app.user %}
+                <div class="dropdown-item">
+                    <a href="/employees"> Dashboard</a>
+                </div>
+                {% endif %}
+
                 <div class="dropdown-divider">
                 </div>
                 <a class="dropdown-item" href="/logout">الخروج </a></div>

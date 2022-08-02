@@ -1,33 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}User index{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+    <link rel="stylesheet" href="{{ asset("assets/css/Pretty-User-List-.css") }}">
+{% endblock %}
 
 {% block body %}
     <h1>User index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Email</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="row user-list">
         {% for user in users %}
-            <tr>
-                <td>{{ user.email }}</td>
-                <td>
-                    <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 user-item" style="margin-left: 10px;">
+            <div class="user-container"><a class="user-avatar" href="#"><img class="rounded-circle img-fluid" src={{ asset("assets/img/avatars/default-avatar.png") }} width="48" height="48" alt="Profile of Mark Smith Peterson"></a>
+                <p class="user-name"><a href="{{ path('app_user_show', {'id': user.id}) }}">{{ user.email }}</a><span>Last seen on 27th Sep 2014 </span></p>
 
-    <a href="{{ path('app_user_new') }}">Create new</a>
+            </div>
+        </div>
+        {% else %}
+            <p> no user found</p>
+        {% endfor %}
+    </div>
+
+{#    <a href="{{ path('app_user_new') }}">Create new</a>#}
 {% endblock %}

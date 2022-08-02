@@ -1,6 +1,6 @@
 <?php
 
-namespace App\service;
+namespace App\Service;
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
@@ -15,28 +15,27 @@ class PdfService
         $this->domPdf = new Dompdf();
         $this->domPdf->setPaper('A4', 'portrait');
         $pdfOptions->isRemoteEnabled(true);
+        $pdfOptions->setChroot(["/public/assets"]);
+        $pdfOptions->setTempDir('/public/assets/');
+        $pdfOptions->setIsHtml5ParserEnabled(true);
+        $this->domPdf->setOptions($pdfOptions);;
         $dompdf = new Dompdf($pdfOptions);
-        $contxt = stream_context_create([
+        $context = stream_context_create([
             'ssl' => [
                 'verify_peer' => FALSE,
                 'verify_peer_name' => FALSE,
                 'allow_self_signed' => TRUE
             ]
         ]);
-        $dompdf->setHttpContext($contxt);
-
-        //$pdfOptions->setIsHtml5ParserEnabled(true);
-        $this->domPdf->setOptions($pdfOptions);
-
-
-
+        $dompdf->setHttpContext($context);
     }
+
     public function showPdfFile($html){
         $this->domPdf->loadHtml($html);
         $this->domPdf->render();
         ob_get_clean();
         $this->domPdf->stream('file.pdf',[
-            'Attachment' =>false
+            'Attachment' =>true
         ]);
 
     }

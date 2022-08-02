@@ -1,16 +1,20 @@
 <html lang="ar">
 <head>
+    <meta charset="UTF-8"/>
     <title>ترخيص مسبق للقيام بعمل إضافي أيام الآحاد والعطل الرسمية</title>
 <style type="text/css">
-    body { font-family: DejaVu Sans, sans-serif; }
+    body { font-family: "DejaVu Sans", sans-serif; }
 </style>
 </head>
+
+
 <body>
 {% block body %}
 <div class="container" style="text-align: right;">
     <div class="row">
         <div >
-            <img src="{{ relative_path("assets/img/Logo_tt.jpg") }}" style=" width: 100px;" alt="">
+
+            <img src="/public/assets/img/Logo_tt.jpg" style=" width: 100px;" alt="">
         </div>
         <div style="text-align: left" >
             <p><br><strong>
@@ -69,25 +73,22 @@
     </div>
 </div>
 <div class="container" style="text-align: right;">
-    <div class="row">
-            <div class="col-md-6 text-end">
                 <p>الشركة الوطنية للاتصالات</p>
-                <p>الإدارة الجهوية للاتصالات بجندوبة</p>
+                <p style="" >الإدارة الجهوية للاتصالات بجندوبة</p>
                 <p style="margin-right: 20px">الهيكل: وحدة التصرف في الخدمات</p>
                 <br>
-            </div>
 
 </div>
 <div class="container" style="text-align:center">
     <div class="row">
-        <div class="col-md-12">
+        <div style="text-align:right">
             <h4>ترخيص مسبق للقيام بعمل إضافي أيام الآحاد والعطل الرسمية</h4>
         </div>
     </div>
 </div>
 <div class="container fw-light" style="margin-top: 40px;">
     <div class="row">
-        <div class="col-md-6 text-end align-self-baseline m-auto">
+        <div>
             <div style="width: 200px; margin-left: 200px;">
                 <table style="border: 2px solid black" >
                     <tbody>
@@ -105,18 +106,17 @@
     </div>
 </div>
 <div class="container" style="text-align:right">
-    <div class="row">
-        <div class="col-md-12 text-end">
+        <div>
             <p><br>
                 <strong><span style="color: rgb(0, 0, 0); background-color: transparent;"> {{ employee.prenom ~' '~ employee.nom}}</span></strong>
                 <span style="color: rgb(0, 0, 0); background-color: transparent;">العون المكلف بالعمل الإضافي:</span>
                 </p>
-            <p><span style="color: rgb(0, 0, 0); background-color: transparent; margin-right: 57px">الخطة:{{ employee.plan }}</span></p>
+            <p><span style="text-align: right; margin-right: 57px">الخطة:{{ employee.plan }}</span></p>
             <p><span> وبعد أنتم مطالبون للقيام بعمل إضافي وذلك أيام: {{employee.dateTravaux}}</span></p>
                 <p><span>ل{{employee.travauxFaits}}</span></p>
-            <p><br><span style="color: rgb(0, 0, 0); background-color: transparent;">بالعنوان التالي: {{employee.adresseTravaux}}</span><br></p>
+            <p><br><span style="text-align: right">بالعنوان التالي: {{employee.adresseTravaux}}</span><br></p>
         </div>
-    </div>
+
 </div>
 <div class="container">
     <div class="row">
@@ -128,5 +128,5 @@
 </div>
 
 {% endblock %}
-</div></body>
+</body>
 </html>

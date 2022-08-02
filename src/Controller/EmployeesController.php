@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Employees;
 use App\Form\EmployeesType;
-use App\service\PdfService;
+use App\Service\PdfService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -89,7 +89,7 @@ class EmployeesController extends AbstractController
     public function generatePdf( PdfService $pdf, Employees $employee){
         $html = $this->render('employees/avTravaux.html.twig',['employee'=> $employee,]);
         $pdf->showPdfFile($html);
-        $pdf->generateBinaryPDF();
+        $pdf->generateBinaryPDF($html);
     }
 
     /**
