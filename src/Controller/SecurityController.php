@@ -16,6 +16,7 @@ class SecurityController extends AbstractController
     {
 
          if ($this->getUser()) {
+             //$this->getUser()->setLastLogin( new \DateTimeImmutable());
              {return $this->redirectToRoute('app_employees_index');}
          }
 

@@ -3,7 +3,8 @@
     <meta charset="UTF-8"/>
     <title>ترخيص مسبق للقيام بعمل إضافي أيام الآحاد والعطل الرسمية</title>
 <style type="text/css">
-    body { font-family: "DejaVu Sans", sans-serif; }
+    body {
+        font-family: DejaVu Sans, serif; }
 </style>
 </head>
 
@@ -12,13 +13,9 @@
 {% block body %}
 <div class="container" style="text-align: right;">
     <div class="row">
-        <div >
-
-            <img src="/public/assets/img/Logo_tt.jpg" style=" width: 100px;" alt="">
-        </div>
+        <img src="/assets/img/Logo_tt.jpg" style=" width: 100px;" alt="">
         <div style="text-align: left" >
-            <p><br><strong>
-                        <span style="color: rgb(0, 0, 0); background-color: transparent;">
+            <p><strong><span>
                             {% if("now"|date("m") == 1 ) %}
                                 {{ 'جانفي' }}
                             {% endif %}
@@ -66,7 +63,7 @@
                             {% if("now"|date("m") == 12 ) %}
                                 {{ 'ديسمبر' }}
                             {% endif %}
-                            {{ '20' ~'᠎᠎᠎᠎ '~ "now"|date("y")}}
+                            {{ "now"|date("Y")}}
 
                         </span></strong></p>
         </div>
@@ -89,13 +86,15 @@
 <div class="container fw-light" style="margin-top: 40px;">
     <div class="row">
         <div>
-            <div style="width: 200px; margin-left: 200px;">
-                <table style="border: 2px solid black" >
+            <div style="width: 200px; margin-left: 100px;">
+                <table style=" border: 1px solid black" >
                     <tbody>
+{#                    {% for i in employee.matricule %}#}
                     <tr>
                         <td style="border-right: 1px solid black">
                             {{ employee.matricule }}
                         </td>
+{#                        {% endfor %}#}
                         <td style="background-color: grey; text-align: center;">رقم التســــــجيل:</td>
                     </tr>
                     </tbody>
@@ -108,14 +107,15 @@
 <div class="container" style="text-align:right">
         <div>
             <p><br>
-                <strong><span style="color: rgb(0, 0, 0); background-color: transparent;"> {{ employee.prenom ~' '~ employee.nom}}</span></strong>
+                <strong><span style=""> {{ employee.prenom ~' '~ employee.nom}}</span></strong>
                 <span style="color: rgb(0, 0, 0); background-color: transparent;">العون المكلف بالعمل الإضافي:</span>
                 </p>
-            <p><span style="text-align: right; margin-right: 57px">الخطة:{{ employee.plan }}</span></p>
-            <p><span> وبعد أنتم مطالبون للقيام بعمل إضافي وذلك أيام: {{employee.dateTravaux}}</span></p>
-                <p><span>ل{{employee.travauxFaits}}</span></p>
-            <p><br><span style="text-align: right">بالعنوان التالي: {{employee.adresseTravaux}}</span><br></p>
+            <p> الخطة: <span style="text-align: right; ">{{ employee.plan }}</span></p>
+
         </div>
+    <p style="text-align:right ;margin-right: 57px"> وبعد أنتم مطالبون للقيام بعمل إضافي وذلك أيام:<
+   <span>ل{{employee.travauxFaits}}</span></p>
+    <p>><span style="text-align: right">بالعنوان التالي: {{employee.adresseTravaux}}</span><br></p>
 
 </div>
 <div class="container">

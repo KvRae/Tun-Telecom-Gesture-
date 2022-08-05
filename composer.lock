@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f7c91c5e3334efdfab761fdab74723a5",
+    "content-hash": "6edaa4397479546e80bd3a281a0cb01c",
     "packages": [
         {
             "name": "ar-php/ar-php",
@@ -1694,6 +1694,61 @@
                 "source": "https://github.com/h4cc/wkhtmltopdf-amd64/tree/master"
             },
             "time": "2018-01-15T06:57:33+00:00"
+        },
+        {
+            "name": "khaled.alshamaa/ar-php",
+            "version": "v6.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/khaled-alshamaa/ar-php.git",
+                "reference": "a35d61400a646a0c685a98d3fc7eea8721bc404e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/khaled-alshamaa/ar-php/zipball/a35d61400a646a0c685a98d3fc7eea8721bc404e",
+                "reference": "a35d61400a646a0c685a98d3fc7eea8721bc404e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "9.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ArPHP\\I18N\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Khaled Al-Sham'aa",
+                    "email": "khaled@ar-php.org",
+                    "homepage": "http://www.ar-php.org"
+                }
+            ],
+            "description": "Set of functionalities enable Arabic website developers to serve professional search, present and process Arabic content in PHP",
+            "homepage": "https://github.com/khaled-alshamaa/ar-php",
+            "keywords": [
+                "arabic",
+                "arabic-calendar",
+                "arabic-glyphs",
+                "arabic-numbers",
+                "arabic-segments-identifier",
+                "arabic-sentiment",
+                "arabic-sql-query"
+            ],
+            "support": {
+                "issues": "https://github.com/khaled-alshamaa/ar-php/issues",
+                "source": "https://github.com/khaled-alshamaa/ar-php/tree/v6.3.0"
+            },
+            "time": "2022-06-17T18:17:40+00:00"
         },
         {
             "name": "knplabs/knp-snappy",
