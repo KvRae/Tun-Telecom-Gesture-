@@ -90,7 +90,7 @@ class EmployeesController extends AbstractController
 
         $html = $this->render('employees/avTravaux.html.twig',['employee'=> $employee,]);
         $pdf->showPdfFile($html);
-        $pdf->generateBinaryPDF($html);
+//        $pdf->generateBinaryPDF($html);
     }
 
     /**
