@@ -31,6 +31,20 @@ class EmployeesController extends AbstractController
     }
 
     /**
+     * @Route("/exportDonnees", name="app_employees_export", methods={"GET"})
+     */
+    public function export(EntityManagerInterface $entityManager): Response
+    {
+        $employees = $entityManager
+            ->getRepository(Employees::class)
+            ->findAll();
+
+        return $this->render('employees/empty.html.twig', [
+            'employees' => $employees,
+        ]);
+    }
+
+    /**
      * @Route("/new", name="app_employees_new", methods={"GET", "POST"})
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
@@ -88,6 +102,7 @@ class EmployeesController extends AbstractController
      */
     public function generatePdf( PdfService $pdf, Employees $employee){
 
+
         $html = $this->render('employees/avTravaux.html.twig',['employee'=> $employee,]);
         $pdf->showPdfFile($html);
 //        $pdf->generateBinaryPDF($html);
@@ -105,6 +120,8 @@ class EmployeesController extends AbstractController
 
         return $this->redirectToRoute('app_employees_index', [], Response::HTTP_SEE_OTHER);
     }
+
+
 
 
 

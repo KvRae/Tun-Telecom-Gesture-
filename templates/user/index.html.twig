@@ -17,7 +17,6 @@
                 </a>
                 <p class="user-name" style="margin-bottom:5px"><a href="{{ path('app_user_show', {'id': user.id}) }}">{{ user.email }}</a>
                     <span>créé le: {{ user.createdAt |date("d M Y h:i") }} </span>
-                <span >dernier login: {{ user.lastLogin |date("d M Y h:i") }} </span></p>
 
             </div>
         </div>

@@ -29,7 +29,7 @@ class PdfService
         $this->domPdf->stream('service.pdf',[
             'Attachment' =>false
         ]);
-        $this->domPdf->output($html);
+        //$this->domPdf->output($html);
 
     }
     public function generateBinaryPDF($html){

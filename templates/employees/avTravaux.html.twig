@@ -13,57 +13,70 @@
 {% block body %}
 <div class="container" style="text-align: right;">
     <div class="row">
-        <img src="/assets/img/Logo_tt.jpg" style=" width: 100px;" alt="">
+        <img src="/assets/img/Logo_tt.jpg" style=" width: 100px;" alt="logo">
         <div style="text-align: left" >
             <p><strong><span>
                             {% if("now"|date("m") == 1 ) %}
                                 {{ 'جانفي' }}
+                                {% set month = 'جانفي'  %}
                             {% endif %}
 
                             {% if("now"|date("m") == 2 ) %}
                                 {{ 'فيفري' }}
+                                {% set month = 'فيفري'  %}
                             {% endif %}
 
                             {% if("now"|date("m") == 3 ) %}
                                 {{ 'مارس' }}
+                                {% set month = 'مارس'  %}
                             {% endif %}
 
                             {% if("now"|date("m") == 4 ) %}
                                 {{ 'أفريل' }}
+                                {% set month = 'أفريل'  %}
                             {% endif %}
 
                             {% if("now"|date("m") == 5 ) %}
                                 {{ 'ماي' }}
+                                {% set month = 'ماي'  %}
                             {% endif %}
 
                             {% if("now"|date("m") == 6 ) %}
                                 {{ 'جوان' }}
+                                {% set month = 'جوان'  %}
                             {% endif %}
 
                             {% if("now"|date("m") == 7 ) %}
                                 {{ 'جويلية' }}
+                                {% set month = 'جويلية'  %}
                             {% endif %}
 
                             {% if("now"|date("m") == 8 ) %}
                                 {{ 'أوت' }}
+                                {% set month = 'أوت'  %}
                             {% endif %}
 
                             {% if("now"|date("m") == 9 ) %}
                                 {{ 'سبتمبر' }}
+                                {% set month = 'سبتمبر'  %}
                             {% endif %}
 
                             {% if("now"|date("m") == 10 ) %}
                                 {{ 'أكتوبر' }}
+                                {% set month = 'أكتوبر'  %}
                             {% endif %}
 
                             {% if("now"|date("m") == 11 ) %}
                                 {{ 'نوفمبر' }}
+                                {% set month = 'نوفمبر'  %}
                             {% endif %}
 
                             {% if("now"|date("m") == 12 ) %}
                                 {{ 'ديسمبر' }}
+                                {% set month = 'ديسمبر'  %}
+
                             {% endif %}
-                            {{ "now"|date("Y")}}
+                            <span>{{ "now"|date("Y") }}</span>
 
                         </span></strong></p>
         </div>
@@ -72,13 +85,13 @@
 <div class="container" style="text-align: right;">
                 <p>الشركة الوطنية للاتصالات</p>
                 <p style="" >الإدارة الجهوية للاتصالات بجندوبة</p>
-                <p style="margin-right: 20px">الهيكل: وحدة التصرف في الخدمات</p>
+                <p style="">الهيكل: وحدة التصرف في الخدمات</p>
                 <br>
 
 </div>
 <div class="container" style="text-align:center">
     <div class="row">
-        <div style="text-align:right">
+        <div style="text-align:center">
             <h4>ترخيص مسبق للقيام بعمل إضافي أيام الآحاد والعطل الرسمية</h4>
         </div>
     </div>
@@ -86,8 +99,8 @@
 <div class="container fw-light" style="margin-top: 40px;">
     <div class="row">
         <div>
-            <div style="width: 200px; margin-left: 100px;">
-                <table style=" border: 1px solid black" >
+            <div style="display: flex; align-items: end; justify-content: center;">
+                <table style=" border: 2px solid black" >
                     <tbody>
 {#                    {% for i in employee.matricule %}#}
                     <tr>
@@ -95,7 +108,7 @@
                             {{ employee.matricule }}
                         </td>
 {#                        {% endfor %}#}
-                        <td style="background-color: grey; text-align: center;">رقم التســــــجيل:</td>
+                        <td style="background-color: grey; text-align: center;"> : رقم التســــــجيل  </td>
                     </tr>
                     </tbody>
                 </table>
@@ -107,28 +120,34 @@
 <div class="container" style="text-align:right">
         <div>
             <p><br>
+
+                <span style="color: rgb(0, 0, 0); background-color: transparent;"> العون المكلف بالعمل الإضافي : </span>
                 <strong><span style=""> {{ employee.prenom ~' '~ employee.nom}}</span></strong>
-                <span style="color: rgb(0, 0, 0); background-color: transparent;">العون المكلف بالعمل الإضافي:</span>
                 </p>
-            <p> الخطة: <span style="text-align: right; ">{{ employee.plan }}</span></p>
+            <p>  <span style="text-align: right; "> الخطة: {{ employee.plan }} </span></p>
 
         </div>
-    <p style="text-align:right ;margin-right: 57px"> وبعد أنتم مطالبون للقيام بعمل إضافي وذلك أيام:
-   <span>ل{{employee.travauxFaits}}</span></p>
+
+    <p style="text-align:right ;margin-right: 1px">  وبعد أنتم مطالبون للقيام بعمل إضافي وذلك أيام: {{ employee.dateTravaux}} {{ month ~' '~ "now"|date("Y") }}</p>
+    <p><span>ل{{employee.travauxFaits}} </span></p>
     <p>
         <span style="text-align: right">بالعنوان التالي: {{employee.adresseTravaux}} </span>
         <br>
     </p>
 
 </div>
+    <div style="width: 50px; height: 170px">
+
+    </div>
 <div class="container">
+
     <div class="row">
         <div class="col-md-6" style="text-align: left">
             <p class="text-center"><strong><span style="color: rgb(0, 0, 0); background-color: transparent;">امضاء المشرف على الهيكل</span>
                 </strong>
                 <br></p>
         </div>
-        <div class="col-md-6"></div>
+        <div ></div>
     </div>
 </div>
 
