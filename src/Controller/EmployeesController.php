@@ -101,11 +101,9 @@ class EmployeesController extends AbstractController
      * @param Employees $employee
      */
     public function generatePdf( PdfService $pdf, Employees $employee){
-
-
-        $html = $this->render('employees/avTravaux.html.twig',['employee'=> $employee,]);
-        $pdf->showPdfFile($html);
-//        $pdf->generateBinaryPDF($html);
+        $number = $employee->getMatricule();
+        $array  = array_map('intval', str_split($number));
+        return $this->render('employees/avtravauxVersion2.html.twig',['employee' => $employee,'matricule'=>$array]);
     }
 
     /**

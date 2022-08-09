@@ -1,7 +1,7 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8"/>
-    <title>ترخيص مسبق للقيام بعمل إضافي أيام الآحاد والعطل الرسمية</title>
+    <title>ترخيص مسبق للقيام بعمل إضافي أيام عادية</title>
 </head>
 
 
@@ -88,7 +88,8 @@
 <div class="container" style="text-align:center">
     <div class="row">
         <div style="text-align:center">
-            <h4>ترخيص مسبق للقيام بعمل إضافي أيام الآحاد والعطل الرسمية</h4>
+            <h4>ترخيص مسبق للقيام بعمل إضافي أيام عادية</h4>
+
         </div>
     </div>
 </div>
@@ -123,16 +124,17 @@
                 <span style="color: rgb(0, 0, 0); background-color: transparent;"> العون المكلف بالعمل الإضافي : </span>
                 <strong><span style=""> {{ employee.prenom ~' '~ employee.nom}}</span></strong>
                 </p>
-            <p>  <span style="text-align: right; "> الخطة: {{ employee.plan }} </span></p>
+
 
         </div>
 
-    <p style="text-align:right ;margin-right: 1px">  وبعد أنتم مطالبون للقيام بعمل إضافي وذلك أيام: {{ employee.dateTravaux}} {{ month ~' '~ "now"|date("Y") }}</p>
-    <p><span>ل{{employee.travauxFaits}} </span></p>
+    <p style="text-align:right ;margin-right: 1px">  وبعد أنتم مطالبون للقيام بعمل إضافي وذلك : ل{{employee.travauxFaits}}</p>
+    <p><span> </span></p>
     <p>
         <span style="text-align: right">بالعنوان التالي: {{employee.adresseTravaux}} </span>
         <br>
     </p>
+    <p>وذلك أيام شهر: <u>{{ month ~' '~ "now"|date("Y") }}</u> </p>
 
 </div>
     <div style="width: 50px; height: 170px">

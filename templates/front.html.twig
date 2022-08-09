@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Tunisie Telecom</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}?v=2" />
+    <title>Tunisie Telecom - Control Panel</title>
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset("assets/bootstrap/css/bootstrap.min.css") }}">
         <link rel="stylesheet" href="{{ asset("https://fonts.googleapis.com/css?family=Arbutus+Slab") }}">
@@ -15,6 +16,7 @@
         <link rel="stylesheet" href="{{ asset("assets/css/Footer-Dark-icons.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/css/Pretty-Header-.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/css/styles.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/fonts/fontawesome-all.min.css") }}">
 
     {% endblock %}
 </head>
@@ -27,7 +29,7 @@
 
 <body>
 <nav class="navbar navbar-light navbar-expand-md custom-header" style="background: white;">
-    <div class="container-fluid"><a href="/"><img  src="{{ asset("assets/img/Logo_tt.png") }}" width="150"></a>
+    <div class="container-fluid"><a href="https://www.tunisietelecom.tn/Fr"><img src="{{ asset("assets/img/Logo_tt.png") }}" width="150"></a>
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="navbar-nav links">
                 <li class="nav-item"><a class="nav-link" href="#"></a></li>
@@ -49,13 +51,16 @@
                 </div>
                 {% if app.user %}
                 <div class="dropdown-item">
-                    <a href="/employees"> Dashboard</a>
+                    <a class="dropdown-item" href="{{ path('app_employees_index') }}"><i class="fas fa-server fa-fw me-2 text-gray-400"></i>
+                        لوحه القياده</a>
                 </div>
                 {% endif %}
 
-                <div class="dropdown-divider">
-                </div>
-                <a class="dropdown-item" href="/logout">الخروج </a></div>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-item">
+                <a class="dropdown-item" href=" {{ path('app_logout') }}" ><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>
+                    الخروج
+                </a></div></div>
         </div>
     {% else %}
         <a href="{{path("app_login") }}">

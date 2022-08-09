@@ -25,6 +25,9 @@ class HomeController extends AbstractController
 
     public function test(Employees $employee): Response
     {
-        return $this->render('employees/avtravaux.html.twig',['employee' => $employee,]);
+        $number = $employee->getMatricule();
+
+        $array  = array_map('intval', str_split($number));
+        return $this->render('employees/avtravaux.html.twig',['employee' => $employee,'matricule'=>$array]);
     }
 }
